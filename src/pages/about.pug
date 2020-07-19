@@ -1,0 +1,17 @@
+extends ../pug/html.pug
+
+block body
+  body
+    header
+      include ../blocks/top-menu/block.pug
+    main.main
+      .main__inner.container
+        aside.main__aside
+          include ../blocks/aside-nav/block.pug
+        .main__content
+          include ../blocks/about/block.pug
+
+    footer
+      include ../blocks/footer/block.pug
+      //- include ../blocks/bottom/block.pug
+    include ../pug/scripts.pug

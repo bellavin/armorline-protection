@@ -1,0 +1,175 @@
+.home-catalog {
+  background-color: @parchment;
+
+  &__inner {
+    padding-top: 26px;
+    padding-bottom: 38px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: -23px;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+  }
+
+  &__left,
+  &__right {
+    flex-basis: 50%;
+  }
+
+  &__right {
+    text-align: right;
+  }
+
+  &__img {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 13px;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__subtitle--left {
+    padding-left: 192px;
+  }
+
+  &__subtitle--right {
+    padding-right: 198px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: 114px;
+    border-top: 1px solid @mongoose;
+    border-bottom: 1px solid @mongoose;
+  }
+
+  &__item ~ &__item {
+    border-top: 0;
+  }
+
+  &__item--left {
+    padding-left: 192px;
+    border-right: 1px solid @mongoose;
+  }
+
+  &__item--right {
+    padding-right: 198px;
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  &__icon {
+    img {
+      display: block;
+    }
+  }
+
+  &__desc {
+    font-family: Anton, Arial, sans-serif;
+
+    span {
+      display: block;
+    }
+
+    b {
+      display: block;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    &--left {
+      padding-left: 16px;
+    }
+
+    &--right {
+      padding-right: 28px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__item--left,
+    &__subtitle--left {
+      padding-left: 70px;
+    }
+
+    &__item--right,
+    &__subtitle--right {
+      padding-right: 70px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__img {
+      display: none;
+    }
+
+    &__item:last-child {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item--left,
+    &__subtitle--left {
+      padding-left: 20px;
+    }
+
+    &__item--right,
+    &__subtitle--right {
+      padding-right: 20px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &__wrapper {
+      display: block;
+    }
+
+    &__subtitle {
+      margin-top: 10px;
+    }
+
+    &__item,
+    &__subtitle {
+      padding-right: 20px;
+      padding-left: 20px;
+      text-align: center;
+    }
+
+    &__item {
+      justify-content: center;
+      flex-direction: row;
+      text-align: center;
+      border-right: 0;
+    }
+
+    &__desc {
+      padding-left: 28px;
+    }
+  }
+}

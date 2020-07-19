@@ -1,0 +1,30 @@
+.bread {}
+
+.bread {
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 14px;
+  }
+
+  &__item ~ &__item {
+    margin-left: 10px;
+
+    &::before {
+      content: "/";
+      margin-right: 10px;
+      color: white;
+    }
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+
+    [href]&:hover,
+    [href]&:focus {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.footer {
+  background-color: @dimgray;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__left {
+    background-color: @red;
+    padding: 38px 52px;
+  }
+
+  &__center {
+    background-color: black;
+  }
+
+  &__right {
+    display: flex;
+    flex-grow: 1;
+    padding: 42px 50px 0 65px;
+  }
+
+  &__logo {
+    display: block;
+    .fade();
+  }
+
+  &__logo img {}
+
+  &__contacts {
+    font-size: 17px;
+    color: white;
+
+    a[href^="tel:"] {
+      font-size: 25px;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__btn {
+    width: 217px;
+  }
+
+  &__social-list {
+    padding: 18px 45px;
+  }
+
+  &__social-item {
+    margin-top: 23px;
+  }
+
+  &__social-link {
+    display: block;
+    filter: brightness(0) invert(1);
+    transition: filter 0.5s;
+
+    img {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      filter: brightness(1) invert(0);
+    }
+  }
+
+  &__left-links {}
+
+  &__right-links {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: @darkred;
+      text-decoration: underline;
+    }
+  }
+
+  &__link {
+    margin-top: 10px;
+  }
+
+  &__right-links &__link {
+    font-size: 13px;
+    text-decoration: underline;
+  }
+
+  &__link--offer {
+    margin: 55px 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__inner {
+      flex-wrap: wrap;
+    }
+    &__left {
+      width: 50%;
+      box-sizing: border-box;
+    }
+    &__center {
+      width: 50%;
+    }
+    &__rigth {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__social-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    &__social-item {
+      margin-top: 0;
+    }
+    &__social-item ~ &__social-item {
+      margin-left: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__inner {
+      flex-direction: column;
+    }
+    &__left {
+      width: 100%;
+      text-align: center;
+      padding: 38px 12px;
+    }
+    &__center {
+      width: 100%;
+    }
+    &__right {
+      display: block;
+      padding: 20px;
+    }
+    &__left-links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__right-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+      text-align: left;
+    }
+    &__link {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 20px;
+    }
+  }
+}

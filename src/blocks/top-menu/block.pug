@@ -1,0 +1,37 @@
+mixin nav-item(txt, href)
+  +e.LI.nav-item
+    +e.nav-link(href= href) #{txt}
+
+mixin left-menu-item(txt)
+  +e.LI.left-menu-item
+    +e.left-menu-link(href="#") #{txt}
+
++b.top-menu.container
+  +e.left-menu
+    +e.left-menu-overlay
+    +e.BUTTON.left-menu-burger.btn-reset
+      +b.burger
+        +e.inner
+    +e.UL.left-menu-list.list-reset
+      +left-menu-item("Акции")
+      +left-menu-item("Доставка и оплата")
+      +left-menu-item("Блог")
+  +e.nav
+    +e.nav-logo(href="index.html")
+      img(src="img/content/logo.png")
+    +e.UL.nav-list.list-reset
+      +nav-item("Главная", "index.html")
+      +nav-item("О компании", "about.html")
+      +nav-item("Продукция", "#")
+      +nav-item("Портфолио", "#")
+      +nav-item("Партнерам", "#")
+      +nav-item("Контакты", "#")
+    +e.nav-language
+      img(src="img/content/flag-rus.png")
+      +e.BUTTON.nav-language-btn.btn-reset
+        img(src="img/content/arrow.png")
+    +e.nav-toggle
+      +e.nav-toggle-overlay
+      +e.BUTTON.nav-toggle-burger.btn-reset
+        +b.burger
+          +e.inner

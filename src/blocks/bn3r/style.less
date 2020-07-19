@@ -1,0 +1,98 @@
+.bn3r {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 603px;
+  padding-top: 120px;
+  padding-bottom: 104px;
+  padding-left: 48px;
+  padding-right: 48px;
+  color: white;
+  border-bottom: 1px solid;
+  background-image: url(../img/content/bg-home-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    bottom: 131px;
+    background-color: white;
+  }
+
+  &::before {
+    left: -144px;
+    width: 193px;
+  }
+
+  &::after {
+    left: 264px;
+    right: 0;
+  }
+
+  &__blockquote {
+    max-width: 400px;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.16;
+    text-transform: uppercase;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+  &__cite {
+    display: block;
+    margin-top: 60px;
+    font-size: 24px;
+    font-style: normal;
+  }
+
+  &__btn {
+    width: 217px;
+    margin-top: auto;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 17px;
+
+    &:hover,
+    &:focus {
+      color: black;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 420px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &::before,
+    &::after {
+      bottom: 77px;
+    }
+
+    &::before {
+      left: 0;
+      width: 49px;
+    }
+
+    &__blockquote {
+      font-size: 24px;
+    }
+
+    &__cite {
+      font-size: 20px;
+    }
+  }
+}
