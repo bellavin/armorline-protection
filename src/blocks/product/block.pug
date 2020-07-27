@@ -1,0 +1,29 @@
+mixin item(title, desc, price)
+  +e.LI.item
+    +e.title
+      +e.title-link(href="#") #{title}
+    +e.desc #{desc}
+    +e.img
+      img(src="img/content/products-content-1.jpg")
+    +e.bottom от
+      +e.SPAN.price  #{price}
+    +e.overlay
+      +e.overlay-btn.btn(href="#") Купить товар
+
+
++b.product
+  +b.bread
+    +e.UL.list.list-reset
+      +e.LI.item
+        +e.link(href="index.html") Главная
+      +e.LI.item
+        +e.link(href="product.html") Продукция
+      +e.LI.item
+        +e.SPAN.link Грунтовки Armorline
+  +b.H2.page-title Грунтовки Armorline
+  +e.UL.list.list-reset
+    - for(let i = 0; i < 2; i++)
+      +item("ArmorLine L Грунт по существующему ЛКП и метал...", "Грунт", "13\u00A0900\u00A0₽")
+      +item("ArmorLine L Грунт по существующему ЛКП и метал...", "Грунт", "13\u00A0900\u00A0₽")
+      +item("ArmorLine SP защитный УФ стойкий лак", "Защитный лак", "34\u00A0900\u00A0₽")
+      +item("ArmorLine SP защитный УФ стойкий лак", "Грунт", "2\u00A0900\u00A0₽")

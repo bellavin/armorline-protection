@@ -1,0 +1,49 @@
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  margin-top: initial;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: @darkred;
+  text-transform: uppercase;
+  outline: none;
+  transition: filter 0.3s, opacity 0.3s;
+
+  &:hover {
+    filter: grayscale(1);
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 23px;
+    margin-right: 10px;
+    background-image: url(../img/content/icon-arrow-next.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.swiper-button-next {
+  margin-left: auto;
+  flex-direction: row-reverse;
+
+  &::before {
+    margin-right: 0;
+    margin-left: 10px;
+    transform: rotate(180deg);
+  }
+}

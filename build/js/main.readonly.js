@@ -1,6 +1,10 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
-import {menu} from './utils/menu'
+import {menu} from './utils/menu';
+import {homepage} from './modules/homepage';
+import {productInner} from './modules/product-inner';
+import {order} from './modules/order';
+import {cart} from './modules/cart';
 
 // Utils
 // ---------------------------------
@@ -13,6 +17,10 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 
 // Modules
 // ---------------------------------
+homepage();
+productInner();
+order();
+cart();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -206,5 +214,192 @@ export const slideToggle = (target, duration = 500) => {
     return slideDown(target, duration);
   } else {
     return slideUp(target, duration);
+  }
+}
+
+export const cart = () => {
+  const cartElem = document.querySelector(`.cart`);
+
+  if (cartElem) {
+    const cartTogglesElems = document.querySelectorAll(`.js-cart-toggles`);
+    cartTogglesElems.forEach((elem) => {
+      const DISABLED_TOGGLE_CLASS_NAME = ``;
+      const minusELem = elem.querySelector(`.js-cart-toggle-minus`);
+      const plusELem = elem.querySelector(`.js-cart-toggle-plus`);
+      const ammountElem = elem.querySelector(`.js-cart-amount`);
+
+      minusELem.addEventListener(`click`, () => {
+        if (ammountElem.value > 0) {
+          ammountElem.value -= 1;
+        } else {
+          minusELem.classList.add(DISABLED_TOGGLE_CLASS_NAME);
+        }
+      });
+
+      plusELem.addEventListener(`click`, () => {
+        if (minusELem.classList.contains(DISABLED_TOGGLE_CLASS_NAME)) {
+          minusELem.classList.remove(DISABLED_TOGGLE_CLASS_NAME)
+        }
+        ammountElem.value = parseInt(ammountElem.value) + 1;
+      });
+    });
+  }
+}
+
+export const homepage = () => {
+
+  const factsSlider = document.querySelector('.home-facts .swiper-container');
+  let factsSliderSwiper;
+
+  function factsMobileSlider() {
+    if (factsSlider) {
+      if (window.innerWidth <= 768 && factsSlider.dataset.mobile == 'false') {
+        factsSliderSwiper = new Swiper(factsSlider, {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          }
+        });
+
+        factsSlider.dataset.mobile = 'true';
+      }
+
+      if (window.innerWidth > 768) {
+        factsSlider.dataset.mobile = 'false';
+        if (factsSlider.classList.contains('swiper-container-initialized')) {
+          factsSliderSwiper.destroy();
+        }
+      }
+    }
+  }
+
+
+
+  const salesSlider = document.querySelector('.home-sales .swiper-container');
+  let salesSliderSwiper;
+
+  function salesMobileSlider() {
+    if (salesSlider) {
+      if (window.innerWidth <= 768 && salesSlider.dataset.mobile == 'false') {
+        salesSliderSwiper = new Swiper(salesSlider, {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          },
+          slidesPerView: 1,
+          breakpoints: {
+            540: {
+              slidesPerView: 2,
+            }
+          }
+        });
+
+        salesSlider.dataset.mobile = 'true';
+      }
+
+      if (window.innerWidth > 768) {
+        salesSlider.dataset.mobile = 'false';
+        if (salesSlider.classList.contains('swiper-container-initialized')) {
+          salesSliderSwiper.destroy();
+        }
+      }
+    }
+  }
+
+  factsMobileSlider();
+  salesMobileSlider();
+
+  window.addEventListener('resize', () => {
+    factsMobileSlider();
+    salesMobileSlider();
+  });
+
+}
+
+export const order = () => {
+  const orderElem = document.querySelector(`.order`);
+
+  if (orderElem) {
+    const togglePersonElem = orderElem.querySelector(`.js-order-toggle-person`);
+    const toggleCompanyElem = orderElem.querySelector(`.js-order-toggle-company`);
+    const formPersonElem = orderElem.querySelector(`.js-order-form-person`);
+    const formCompanyElem = orderElem.querySelector(`.js-order-form-company`);
+
+    console.log(togglePersonElem);
+
+
+
+    const openPersonForm = () => {
+      if(togglePersonElem.checked) {
+        formPersonElem.classList.add(`active`);
+
+        formCompanyElem.classList.remove(`active`)
+      }
+    }
+
+    const openCompanyForm = () => {
+      if(toggleCompanyElem.checked) {
+        formCompanyElem.classList.add(`active`);
+
+        formPersonElem.classList.remove(`active`)
+      }
+    }
+
+    toggleCompanyElem.addEventListener(`change`, () => {
+      openCompanyForm();
+    });
+
+    togglePersonElem.addEventListener(`change`, () => {
+      openPersonForm();
+    });
+
+  }
+}
+
+export const productInner = () => {
+  const productInnerElem = document.querySelector(`.product-inner`);
+
+  if (productInnerElem) {
+    var mySwiper = new Swiper(`.product-inner .swiper-container`, {
+      loop: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: `.swiper-button-next`,
+        prevEl: `.swiper-button-prev`,
+      },
+      breakpoints: {
+
+        500: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        }
+      }
+    });
+
+
+    const setPrice = () => {
+      const formElem = document.querySelector(`.js-product-inner-form`);
+      const radioElems = formElem.querySelectorAll(`.js-product-inner-radio`);
+      const priceElem = formElem.querySelector(`.js-product-inner-price`);
+
+      const updatePrice = () => {
+        const radioElem = [...radioElems].filter((elem) => elem.checked)[0];
+        priceElem.textContent = radioElem.value.toLocaleString('ru-RU') + ` Р`;
+      }
+
+      if (formElem) {
+        updatePrice();
+        formElem.addEventListener(`change`, () => {
+          updatePrice();
+        });
+      }
+    }
+
+    setPrice();
   }
 }

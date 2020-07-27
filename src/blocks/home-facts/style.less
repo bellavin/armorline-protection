@@ -4,6 +4,7 @@
 
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__title {
@@ -22,6 +23,7 @@
     padding-left: 86px;
     padding-right: 30px;
     padding-bottom: 35px;
+    box-sizing: border-box;
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,13 +35,7 @@
   }
 
   &__label {
-    width: 154px;
-    padding: 16px 4px 16px 24px;
-    text-align: center;
-    background-color: @darkred;
-    background-image: url(../img/content/icon-clock.png);
-    background-repeat: no-repeat;
-    background-position: 25px center;
+
   }
 
   &__subtitle {
@@ -104,10 +100,12 @@
 
   @media screen and (max-width: 768px) {
     &__wrapper {
-      display: block;
+      display: flex;
+      flex-wrap: nowrap;
     }
 
     &__item {
+      flex-basis: initial;
       padding-right: 20px;
       padding-left: 20px;
     }

@@ -26,8 +26,8 @@ gulp.task(`pug`, function () {
       .pipe(plumber())
       .pipe(pugLinter({ reporter: 'default' }))
       .pipe(pug({ pretty: true }))
-      .pipe(htmlValidator())
-      .pipe(bemValidator())
+      // .pipe(htmlValidator())
+      // .pipe(bemValidator())
       .pipe(gulp.dest(`build`));
 });
 

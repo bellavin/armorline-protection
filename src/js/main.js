@@ -1,6 +1,10 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
-import {menu} from './utils/menu'
+import {menu} from './utils/menu';
+import {homepage} from './modules/homepage';
+import {productInner} from './modules/product-inner';
+import {order} from './modules/order';
+import {cart} from './modules/cart';
 
 // Utils
 // ---------------------------------
@@ -13,3 +17,7 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 
 // Modules
 // ---------------------------------
+homepage();
+productInner();
+order();
+cart();
