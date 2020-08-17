@@ -1,0 +1,186 @@
+.order {
+  padding-right: 80px;
+  padding-left: 80px;
+  padding-bottom: 70px;
+
+  &__title {
+    margin-top: 21px;
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+
+  &__order-toggle-list {
+    display: flex;
+    margin-top: 41px;
+  }
+
+  &__order-toggle-item ~ &__order-toggle-item {
+    margin-left: 47px;
+  }
+
+  &__form {
+    display: none;
+  }
+
+  &__form.active {
+    display: block;
+  }
+
+  &__form-item {
+    max-width: 330px;
+    margin-top: 47px;
+
+    &--price,
+    &--file {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+  }
+
+  &__input {
+    display: block;
+  }
+
+  &__input--price {
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    width: 0;
+    min-width: 5em;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: inherit;
+    color: @darkred;
+  }
+
+  &__label-file {
+    display: table;
+  }
+
+  &__payment-method-list {
+    display: flex;
+    margin-top: 31px;
+
+    margin-bottom: -10px;
+    margin-left: -22px;
+  }
+
+  &__payment-method-item {
+    margin-bottom: 10px;
+    margin-left: 22px;
+  }
+
+  &__payment-method-label {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    width: 205px;
+    height: 86px;
+    padding: 24px 10px 24px 65px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    border: 3px solid @parchment;
+    background-color: @parchment;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      color: @darkred;
+      transition: color 0.3s;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 65px;
+      height: 100%;
+      filter: brightness(0);
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: filter 0.3s;
+    }
+
+    &:hover::before {
+      filter: brightness(1);
+    }
+  }
+
+  &__payment-method-label--cash::before {
+    background-image: url(../img/content/icon-wallet.png);
+  }
+
+  &__payment-method-label--card::before {
+    background-image: url(../img/content/icon-visa.png);
+  }
+
+  &__payment-method-label--yandex-money {
+    padding-right: 20px;
+
+    &::before {
+      background-image: url(../img/content/icon-yandex-money.png);
+    }
+  }
+
+  &__payment-method-input:checked ~ &__payment-method-label {
+    color: @darkred;
+    border-color: @darkred;
+
+    &::before {
+      filter: brightness(1);
+    }
+  }
+
+  &__order-btn {
+    display: table;
+    width: 217px;
+    margin-top: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: @darkred;
+    border-color: @darkred;
+  }
+
+  &__text {
+    a {
+      color: @darkred;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__order-toggle-list {
+      justify-content: center;
+    }
+
+    &__payment-method-list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__form-item {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    &__order-btn {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

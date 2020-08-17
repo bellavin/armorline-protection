@@ -34,13 +34,13 @@
                   </li>
                   <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="about.html">О компании</a>
                   </li>
-                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="product.html">Продукция</a>
+                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="catalog.html">Продукция</a>
                   </li>
                   <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="portfolio.html">Портфолио</a>
                   </li>
                   <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="#">Партнерам</a>
                   </li>
-                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="#">Контакты</a>
+                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="contacts.html">Контакты</a>
                   </li>
           </ul>
           <div class="top-menu__nav-language"><img src="img/content/flag-rus.png">
@@ -80,7 +80,7 @@
             </div>
           </div>
         </aside>
-        <div class="main__content">
+        <div class="main__content main__content--home-page">
           <section class="home-bn3r">
             <blockquote class="home-bn3r__blockquote">
               <p class="home-bn3r__p">Всё можно<b> сделать лучше,</b> чем было сделано до сих пор!
@@ -88,7 +88,14 @@
               <cite class="home-bn3r__cite">Генри Форд
               </cite>
             </blockquote>
-            <div class="home-bn3r__btn btn btn-reset">Сделать заказ
+            <div class="home-bn3r__btn btn btn-reset js-bn3r-modal-opener-1">Сделать заказ
+            </div>
+            <div class="home-bn3r__video">
+              <video loop muted autoplay playsinline webkit-playsinline poster="img/content/bg-home-banner.jpg">
+                <source src="video/007_3_2.mp4" type="video/mp4">
+                <source src="video/007_3_2.mov" type="video/mov">
+                <source src="video/007_3_2.webm" type="video/webm">
+              </video>
             </div>
           </section>
         </div>
@@ -106,21 +113,15 @@
               <ul class="home-catalog__list home-catalog__list--left list-reset">
                 <li class="home-catalog__item home-catalog__item--left">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield1.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--left"><span>ArmorLine</span><b>Start</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--left" href="product.html"><span>ArmorLine</span><b>Start</b></a>
                 </li>
                 <li class="home-catalog__item home-catalog__item--left">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield2.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--left"><span>ArmorLine</span><b>Premium</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--left" href="product.html"><span>ArmorLine</span><b>Premium</b></a>
                 </li>
                 <li class="home-catalog__item home-catalog__item--left">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield3.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--left"><span>ArmorLine</span><b>Gloss</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--left" href="product.html"><span>ArmorLine</span><b>Gloss</b></a>
                 </li>
                 <li class="home-catalog__item">
                 </li>
@@ -132,21 +133,15 @@
               <ul class="home-catalog__list home-catalog__list--right list-reset">
                 <li class="home-catalog__item home-catalog__item--right">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield4.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--right"><span>ArmorLine</span><b>Strong</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--right" href="product.html"><span>ArmorLine</span><b>Strong</b></a>
                 </li>
                 <li class="home-catalog__item home-catalog__item--right">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield5.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--right"><span>ArmorLine</span><b>Elastic</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--right" href="product.html"><span>ArmorLine</span><b>Elastic</b></a>
                 </li>
                 <li class="home-catalog__item home-catalog__item--right">
                   <div class="home-catalog__icon"><img src="img/content/icon-shield6.png">
-                  </div>
-                  <div class="home-catalog__desc home-catalog__desc--right"><span>ArmorLine</span><b>U-Strong</b>
-                  </div>
+                  </div><a class="home-catalog__desc home-catalog__desc--right" href="product.html"><span>ArmorLine</span><b>U-Strong</b></a>
                 </li>
                 <li class="home-catalog__item">
                 </li>
@@ -158,6 +153,12 @@
       <section class="home-advantages container">
         <h2 class="home-advantages__title visually-hidden">Наши преимущества
         </h2>
+        <div class="home-advantages__background">
+          <div class="home-advantages__bg-left"><img src="img/content/bg-home-advantages-1.jpg">
+          </div>
+          <div class="home-advantages__bg-right"><img src="img/content/bg-home-advantages-2.jpg">
+          </div>
+        </div>
         <div class="home-advantages__inner">
           <div class="home-advantages__before"><span>До</span><b>ArmorLine</b>
           </div>
@@ -172,24 +173,20 @@
         </h2>
         <div class="home-production__img"><img src="img/content/bg-home-crocodile.jpg">
         </div>
-        <div class="home-production__wrapper">
-          <div class="home-production__btn btn btn-reset">Перейти в каталог
-          </div>
+        <div class="home-production__wrapper"><a class="home-production__btn btn" href="catalog.html">Перейти в каталог</a>
           <div class="home-production__slogan">Для господства в воде и на суше!
           </div>
         </div>
       </section>
-      <section class="home-portfolio container">
-        <div class="home-portfolio__bg-wrapper">
-          <div class="home-portfolio__bg home-portfolio__bg--left">
-          </div>
-          <div class="home-portfolio__bg home-portfolio__bg--right">
-          </div>
-        </div>
-        <div class="home-portfolio__content">
-          <h2 class="home-portfolio__title">Портфолио
-          </h2><a class="home-portfolio__btn btn" href="#">Показать больше</a>
-        </div>
+      <section class="portfolio container">
+        <ul class="portfolio__list list-reset">
+          <li class="portfolio__item">
+            <div class="portfolio__left"><a class="portfolio__white-btn btn" href="portfolio.html">Показать больше</a><a class="portfolio__link" href="portfolio-inner.html"><img src="img/content/portfolio-content-1.jpg"></a>
+            </div>
+            <div class="portfolio__right"><a class="portfolio__link" href="portfolio-inner.html"><img src="img/content/portfolio-content-2.jpg"></a><a class="portfolio__link" href="portfolio-inner.html"><img src="img/content/portfolio-content-3.jpg"></a><a class="portfolio__link" href="portfolio-inner.html"><img src="img/content/portfolio-content-4.jpg"></a>
+            </div>
+          </li>
+        </ul>
       </section>
       <section class="home-facts container">
         <h2 class="home-facts__title">Это интересно:
@@ -202,7 +199,7 @@
               <div class="home-facts__text">
                 <p>И нет сомнений, что некоторые особенности внутренней политики, вне зависимости от их уровня, должны быть функционально разнесены на независимые элементы. Ключевые особенности структуры проекта подвергнуты целой</p>
                 <p>В целом, конечно, сложившаяся</p>
-              </div><a class="home-facts__btn btn" href="#">Подробнее</a>
+              </div><a class="home-facts__btn btn" href="sales.html">Подробнее</a>
             </div>
             <div class="home-facts__item swiper-slide"><time class="home-facts__label time-label">16 июля 15:44</time>
               <h3 class="home-facts__subtitle">Название статьи в несколько строк или даже больше
@@ -210,9 +207,9 @@
               <div class="home-facts__text">
                 <p>И нет сомнений, что некоторые особенности внутренней политики, вне зависимости от их уровня, должны быть функционально разнесены на независимые элементы. Ключевые особенности структуры проекта подвергнуты целой</p>
                 <p>В целом, конечно, сложившаяся</p>
-              </div><a class="home-facts__btn btn" href="#">Подробнее</a>
+              </div><a class="home-facts__btn btn" href="sales.html">Подробнее</a>
             </div>
-          </div><a class="home-facts__more-btn btn" href="#">Показать больше</a>
+          </div><a class="home-facts__more-btn btn" href="sales.html">Показать больше</a>
         </div>
       </section>
       <section class="home-subscribe container">
@@ -242,7 +239,7 @@
               <p>Екатеринбург, ул.&nbsp;Маневровая&nbsp;123</p>
               <p><a href="tel: +73435677890">+7 343 567 78 90</a></p>
             </div>
-            <button class="footer__btn btn btn-reset">Напишите нам
+            <button class="footer__btn btn btn-reset js-footer-modal-opener-1">Напишите нам
             </button>
           </div>
           <div class="footer__center">
@@ -258,7 +255,7 @@
             </ul>
           </div>
           <div class="footer__right">
-            <div class="footer__left-links"><a class="footer__link" href="index.html">Главная</a><a class="footer__link" href="about.html">О компании</a><a class="footer__link" href="product.html">Каталог</a><a class="footer__link" href="portfolio.html">Примеры работ</a><a class="footer__link" href="#">Акции и скидки</a><a class="footer__link" href="#">Доставка и оплата</a><a class="footer__link" href="blog.html">Блог</a><a class="footer__link" href="#">Контакты</a>
+            <div class="footer__left-links"><a class="footer__link" href="index.html">Главная</a><a class="footer__link" href="about.html">О компании</a><a class="footer__link" href="catalog.html">Каталог</a><a class="footer__link" href="portfolio.html">Примеры работ</a><a class="footer__link" href="sales.html">Акции и скидки</a><a class="footer__link" href="order.html">Доставка и оплата</a><a class="footer__link" href="blog.html">Блог</a><a class="footer__link" href="contacts.html">Контакты</a>
             </div>
             <div class="footer__right-links"><a class="footer__link" href="#">Пользовательское соглашение</a><a class="footer__link" href="#">Политика конфиденциальности</a><a class="footer__link footer__link--offer" href="offer.html">Публичная оферта</a><a class="footer__link" href="#">Все права защищены © 2020</a><a class="footer__link" href="#">Разработка и продвиение InMar</a>
             </div>
@@ -266,6 +263,55 @@
         </div>
       </div>
     </footer>
+    <div class="modal js-modal-1">
+      <div class="modal__overlay js-modal-overlay">
+      </div>
+      <div class="modal__content">
+        <button class="modal__btn-close btn-reset js-modal-close">
+        </button>
+        <h3 class="modal__title">Напишите нам
+        </h3>
+        <form class="modal__form">
+          <ul class="modal__list list-reset">
+            <li class="modal__item"><input class="modal__input input-text" id="modal-name" name="modal-name" type="text" placeholder="Как Вас зовут?"/>
+              <label class="modal__label label-text" for="modal-name">
+              </label>
+            </li>
+            <li class="modal__item"><input class="modal__input input-text" id="modal-phone" name="modal-phone" type="tel" placeholder="Ваш телефон"/>
+              <label class="modal__label label-text" for="modal-phone">
+              </label>
+            </li>
+            <li class="modal__item"><textarea class="modal__input input-text" id="modal-comment" name="modal-comment" placeholder="Комментарий"></textarea>
+              <label class="modal__label label-text" for="modal-comment">
+              </label>
+            </li>
+          </ul>
+          <div class="modal__capcha"><img src="img/content/capcha.jpg">
+          </div>
+          <div class="modal__offer">
+            Отправляя данную форму подтверждаю, что ознакомлен с<a href="">политикой конфиденциальности</a>
+            и даю согласие на
+            <a href="">обработку персональных данных</a>
+          </div>
+          <button class="modal__btn btn btn-reset js-modal-submit">Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal js-modal-2">
+      <div class="modal__overlay js-modal-overlay">
+      </div>
+      <div class="modal__content">
+        <button class="modal__btn-close btn-reset js-modal-close">
+        </button>
+        <h3 class="modal__title">Спасибо
+        </h3>
+        <div class="modal__text">Ваше сообщение успешно отправлено
+        </div>
+        <button class="modal__btn btn btn-reset js-modal-submit">Отправить
+        </button>
+      </div>
+    </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

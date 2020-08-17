@@ -1,0 +1,25 @@
+extends ../pug/html.pug
+
+block body
+  body
+    header
+      include ../blocks/top-menu/block.pug
+    main.main
+      .main__inner.container
+        aside.main__aside.main__aside--home-page
+          include ../blocks/aside-nav/block.pug
+        .main__content.main__content--home-page
+          include ../blocks/home-bn3r/block.pug
+      include ../blocks/home-catalog/block.pug
+      include ../blocks/home-advantages/block.pug
+      include ../blocks/home-production/block.pug
+      include ../blocks/home-portfolio/block.pug
+      include ../blocks/home-facts/block.pug
+      include ../blocks/home-subscribe/block.pug
+      include ../blocks/home-sales/block.pug
+
+    footer
+      include ../blocks/footer/block.pug
+    include ../blocks/modal/block-1.pug
+    include ../blocks/modal/block-2.pug
+    include ../pug/scripts.pug

@@ -1,10 +1,13 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
 import {menu} from './utils/menu';
+import {footer} from './modules/footer';
 import {homepage} from './modules/homepage';
 import {productInner} from './modules/product-inner';
 import {order} from './modules/order';
 import {cart} from './modules/cart';
+import {contacts} from './modules/contacts';
+import {portfolioInner} from './modules/portfolio-inner';
 
 // Utils
 // ---------------------------------
@@ -17,7 +20,10 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 
 // Modules
 // ---------------------------------
+footer();
 homepage();
 productInner();
 order();
 cart();
+contacts();
+portfolioInner();

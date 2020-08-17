@@ -1,0 +1,51 @@
+.error-404 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-image: url(../img/content/bg-404.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  min-height: 100%;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 225px;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  &__desc + &__title {
+    margin-top: 60px;
+  }
+
+  &__desc {
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      font-size: 112px;
+    }
+
+    &__desc + &__title {
+      margin-top: 30px;
+    }
+  }
+}

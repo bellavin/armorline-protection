@@ -1,0 +1,15 @@
+mixin social-item(src, alt)
+  +e.LI.social-item
+    +e.link(href="#")
+      img(src= src alt= alt)
+
++b.aside-nav
+  +e.UL.social-list.list-reset
+    +social-item("img/content/icon-fb-red.png", "facebook")
+    +social-item("img/content/icon-insta-red.png", "instagram")
+    +social-item("img/content/icon-vk-red.png", "vk")
+    +social-item("img/content/icon-youtube-red.png", "youtube")
+  +e.cart
+    +e.cart-price 132 500 Р
+    +e.link(href="#")
+      img(src="img/content/icon-cart-red.png" alt="cart")

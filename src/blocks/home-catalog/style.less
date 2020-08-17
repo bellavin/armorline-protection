@@ -36,7 +36,13 @@
 
     img {
       display: block;
+      transition: transform 0.3s;
     }
+  }
+
+  &__wrapper:hover &__img img,
+  &__wrapper:focus &__img img {
+    transform: scale(1.01);
   }
 
   &__subtitle {
@@ -86,6 +92,10 @@
 
   &__desc {
     font-family: Anton, Arial, sans-serif;
+    color: inherit;
+    text-decoration: none;
+
+    .fade();
 
     span {
       display: block;

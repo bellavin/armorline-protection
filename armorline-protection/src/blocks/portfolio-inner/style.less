@@ -1,0 +1,178 @@
+.portfolio-inner {
+  padding: 30px 48px 94px 67px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -5px;
+    margin-left: -5px;
+    padding-top: 24px;
+  }
+
+  &__item {
+    flex-basis: 33.3%;
+    padding-top: 5px;
+    padding-left: 5px;
+    box-sizing: border-box;
+  }
+
+  &__item:first-child {
+    flex-basis: 100%;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1px;
+    transition: transform 0.3s;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.01);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item:first-child,
+    &__item {
+      flex-basis: 50%;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    &__item:first-child,
+    &__item {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.portfolio-modal {
+  display: none;
+
+  &--open {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: fade(black, 50%);
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1;
+    display: block;
+    height: 29px;
+    width: 29px;
+    outline: none;
+
+    .fade();
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      height: 33px;
+      width: 4px;
+      background-color: white;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  &__btn {
+    display: block;
+    width: 217px;
+    margin: 20px auto 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid @darkred;
+    background-color: @darkred;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__gallery-top {
+    height: 100%;
+  }
+
+  &__gallery-top-item {
+    height: initial;
+    display: flex;
+  }
+
+  // &__gallery-thumbs {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   height: 500px;
+  //   width: 250px;
+  //   bottom: 0;
+  // }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .swiper-button-prev::before,
+  .swiper-button-next::before {
+    background-image: url(../img/content/icon-arrow-next-white.png);
+    width: 22px;
+    height: 40px;
+  }
+}

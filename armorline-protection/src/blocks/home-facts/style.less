@@ -1,0 +1,139 @@
+.home-facts {
+  padding-bottom: 39px;
+  border-bottom: 1px solid @lightgray;
+
+  .swiper-container {
+    overflow: visible;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 44px;
+    padding-bottom: 54px;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  &__item {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 86px;
+    padding-right: 30px;
+    padding-bottom: 35px;
+    box-sizing: border-box;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/content/bg-home-facts-1.jpg);
+    transition: transform 0.3s;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.01);
+    }
+  }
+
+  &__item:nth-child(2n) {
+    background-image: url(../img/content/bg-home-facts-2.jpg);
+  }
+
+  &__label {
+
+  }
+
+  &__subtitle {
+    margin-top: 33px;
+    margin-bottom: 0;
+    line-height: 1.25;
+    font-size: 24px;
+    font-weight: 300;
+    max-width: 320px;
+  }
+
+  &__text {
+    max-width: 300px;
+    padding-top: 2px;
+    padding-bottom: 17px;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 300;
+
+    p ~ p {
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 217px;
+    margin-top: auto;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-color: currentColor;
+
+    &:hover,
+    &:focus {
+      color: black;
+    }
+  }
+
+  &__more-btn {
+    display: block;
+    width: 217px;
+    margin: 32px auto 0;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-color: currentColor;
+
+    &:hover,
+    &:focus {
+      color: @darkred;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item {
+      &:hover,
+      &:focus {
+        transform: initial;
+      }
+    }
+
+    &__btn {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-container {
+      overflow: hidden;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__item {
+      flex-basis: initial;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+}

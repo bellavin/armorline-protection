@@ -7,10 +7,6 @@ export const order = () => {
     const formPersonElem = orderElem.querySelector(`.js-order-form-person`);
     const formCompanyElem = orderElem.querySelector(`.js-order-form-company`);
 
-    console.log(togglePersonElem);
-
-
-
     const openPersonForm = () => {
       if(togglePersonElem.checked) {
         formPersonElem.classList.add(`active`);

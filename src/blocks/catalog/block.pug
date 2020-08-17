@@ -6,7 +6,7 @@ mixin item(src, txt)
     +e.content
       +e.H3.subtitle
         +e.subtitle-link(href="#") #{txt}
-      +e.btn.btn(href="#") Подробнее
+      +e.btn.btn(href="product.html") Подробнее
 
 +b.catalog
   +e.bn3r
@@ -14,7 +14,7 @@ mixin item(src, txt)
   +b.bread
     +e.UL.list.list-reset
       +e.LI.item
-        +e.link(href="#") Главная
+        +e.link(href="index.html") Главная
       +e.LI.item
         +e.SPAN.link Каталог
   +b.H2.page-title Каталог
@@ -23,6 +23,8 @@ mixin item(src, txt)
     +item("img/content/catalog-content-2.jpg", "Грунтовки ARMORLINE")
     +item("img/content/catalog-content-3.jpg", "Расходные материалы ")
     +item("img/content/catalog-content-3.jpg", "ARMORLINE TEAM")
+
+  +e.more-btn.btn(href="product.html") Показать больше
 
   +e.bottom
     +b.H2.page-title Заголовок

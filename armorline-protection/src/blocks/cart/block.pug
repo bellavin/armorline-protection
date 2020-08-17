@@ -1,0 +1,50 @@
+mixin row(value, cost, price, isDisabled)
+  +e.TR.tr
+    +e.TD.td
+      +e.product-link(href="product-inner.html")
+        +e.product-img
+          img(src="img/content/cart-content.jpg")
+        +e.product-name ArmorLine PU из полиуретана Комплект №1
+    +e.TD.td
+      +e.table-toggles.js-cart-toggles
+        +e.BUTTON.table-toggle--minus.btn-reset.js-cart-toggle-minus(disabled=isDisabled) -
+        +e.INPUT.amount.js-cart-amount(type="number" value= value)
+        +e.BUTTON.table-toggle--plus.btn-reset.js-cart-toggle-plus +
+    +e.TD.td--cost #{cost}
+    +e.TD.td--price #{price}
+
+
++b.cart
+  +b.bread
+    +e.UL.list.list-reset
+      +e.LI.item
+        +e.link(href="index.html") Главная
+      +e.LI.item
+        +e.SPAN.link Корзина
+  +b.H2.page-title Корзина
+  +e.top
+    +e.top-desc Вы добавили в корзину 4 товара
+    +e.top-btn.btn(href="catalog.html") Продолжить покупки
+  +e.table-wrapper
+    +e.TABLE.table
+      +e.TR.tr
+        +e.TH.th Товар
+        +e.TH.th Количество
+        +e.TH.th Цена за ед
+        +e.TH.th Сумма
+      +row(2, "1 200 Р/шт", "2400 Р")
+      +row(1, "6 700 Р/шт", "6 700 Р")
+      +row(0, "0 Р/шт", "0 Р", true)
+      +row(2, "8 100 Р/шт", "8 100 Р")
+
+  +e.total
+    +e.total-text Итого:
+    +e.total-price 23 400 Р
+  +e.bottom
+    +e.bottom-left
+      +e.INPUT.promo-input(placeholder="Введите промокод")
+      +e.BUTTON.promo-btn.btn.btn-reset Применить
+    +e.bottom-right
+      +e.bottom-old-price 23 400 Р
+      +e.bottom-price 21 120 Р
+      +e.BUTTON.bottom-btn.btn.btn-reset Оплатить

@@ -2,6 +2,10 @@
   padding-bottom: 39px;
   border-bottom: 1px solid @lightgray;
 
+  .swiper-container {
+    overflow: visible;
+  }
+
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +32,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../img/content/bg-home-facts-1.jpg);
+    transition: transform 0.3s;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.01);
+    }
   }
 
   &__item:nth-child(2n) {
@@ -99,6 +109,22 @@
   }
 
   @media screen and (max-width: 768px) {
+    &__item {
+      &:hover,
+      &:focus {
+        transform: initial;
+      }
+    }
+
+    &__btn {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-container {
+      overflow: hidden;
+    }
+
     &__wrapper {
       display: flex;
       flex-wrap: nowrap;
