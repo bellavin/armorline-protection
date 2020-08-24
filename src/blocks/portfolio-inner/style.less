@@ -10,19 +10,26 @@
   }
 
   &__item {
+    position: relative;
     flex-basis: 33.3%;
-    padding-top: 5px;
+    margin-top: 2px;
+    padding-top: 23.3%;
     padding-left: 5px;
     box-sizing: border-box;
   }
 
   &__item:first-child {
     flex-basis: 100%;
+    padding-top: 52%;
   }
 
   &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: block;
-    height: 100%;
     box-sizing: border-box;
     padding: 1px;
     transition: transform 0.3s;
@@ -49,6 +56,7 @@
     &__item:first-child,
     &__item {
       flex-basis: 50%;
+      padding-top: 35%;
     }
   }
 
@@ -56,6 +64,7 @@
     &__item:first-child,
     &__item {
       flex-basis: 100%;
+      padding-top: 70%;
     }
   }
 }
