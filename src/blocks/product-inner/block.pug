@@ -1,7 +1,7 @@
-mixin form-item(title, desc, value, id, isChecked)
+mixin form-item(title, desc, value, id, dataProductInput, isChecked)
   +e.LI.form-item
     +e.form-radio
-      +e.INPUT.form-input.input-radio.js-product-inner-radio.visually-hidden(type="radio" name="product-item-radio" value= value id= id checked=isChecked)
+      +e.INPUT.form-input.input-radio.js-product-inner-radio.visually-hidden(type="radio" name="product-item-radio" value= value id= id data-product-inner-input=dataProductInput checked=isChecked)
       +e.LABEL.form-label.label-radio(for= id) #{title}
     +e.desc #{desc}
 
@@ -33,15 +33,17 @@ mixin item(title, desc, price)
   +e.wrapper
     +e.left
       +e.img
-        img(src="img/content/products-content.jpg")
+        +e.IMG.img-pic.active(src="img/content/products-content.jpg" data-product-inner-pic="1")
+        +e.IMG.img-pic(src="img/content/products-content-2.jpg" data-product-inner-pic="2")
+        +e.IMG.img-pic(src="img/content/products-content-3.jpg" data-product-inner-pic="3")
 
     +e.right
       +e.content Двухкомпонентная композиция, предназначенная для устройства защитного покрытия с помощью безвоздушных распылителей или методом ручного нанесения.
       +e.FORM.form.js-product-inner-form
         +e.UL.form-list.list-reset
-          +form-item("Комплект №1. МИНИ", "Основа 0,8 литр + 0,2 л. отвердитель (изоционат)", 10900, "product-mini", true)
-          +form-item("Комплект №2. МИДИ ", "Основа 0,8 л. + 0,2 л. отвердитель (изоционат) 4 шт. (картонная упаковка).", 14900, "product-midi")
-          +form-item("Комплект №3: ПРОФИ", "Основа 4,0 литра + 1,0 л. отвердитель (изоционат)", 20900, "product-profi")
+          +form-item("Комплект №1. МИНИ", "Основа 0,8 литр + 0,2 л. отвердитель (изоционат)", 10900, "product-mini", "1", true)
+          +form-item("Комплект №2. МИДИ ", "Основа 0,8 л. + 0,2 л. отвердитель (изоционат) 4 шт. (картонная упаковка).", 14900, "product-midi", "2")
+          +form-item("Комплект №3: ПРОФИ", "Основа 4,0 литра + 1,0 л. отвердитель (изоционат)", 20900, "product-profi", "3")
         +e.price.js-product-inner-price 0 Р
         +e.BUTTON.btn.btn.btn-reset(type="submit") В корзину
         +e.form-download-link(href="#") Скачать описание в PDF
